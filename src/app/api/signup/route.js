@@ -6,7 +6,7 @@ export const POST = async (req) => {
   try {
     await connect();
 
-    const { email, username, password } = await req.json();
+    const { email, name, password } = await req.json();
 
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
@@ -20,7 +20,7 @@ export const POST = async (req) => {
     // Create a new user
     const newUser = new User({
       email,
-      name: username,
+      name,
       password,
     });
 

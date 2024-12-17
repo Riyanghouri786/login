@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [formData, setFormData] = useState({
     email: "",
-    username: "",
+    name: "",
     password: "",
   });
 
@@ -30,7 +30,7 @@ const Signup = () => {
 
       if (response.ok) {
         toast.success("Account created successfully!");
-        setFormData({ email: "", username: "", password: "" }); // Reset form
+        setFormData({ email: "", name: "", password: "" }); // Reset form
       } else {
         toast.error(data.message || "Failed to create account.");
       }
@@ -60,12 +60,12 @@ const Signup = () => {
           </div>
           <div className="mb-4">
             <label className="block mb-2 text-sm font-medium text-gray-700">
-              Username
+              name
             </label>
             <input
               type="text"
-              name="username"
-              value={formData.username}
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Username"

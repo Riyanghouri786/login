@@ -3,8 +3,7 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
-    trim: true, // Removes leading/trailing whitespace
+    // Removes leading/trailing whitespace
   },
   email: {
     type: String,
